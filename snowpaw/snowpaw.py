@@ -25,68 +25,68 @@ O = Object
 
 
 def D(value):
-    """if only string works here, why there are other constructor"""
-    return Decimal(str(value))
+    """if only string works here, why there are other constructor"""
+    return Decimal(str(value))
 
 
 def logaround(func):
-    """log around"""
+    """log around"""
 
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        logging.info("function %s start", func.__name__)
-        result = func(*args, **kwargs)
-        logging.info("function %s end", func.__name__)
-        return result
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        logging.info("function %s start", func.__name__)
+        result = func(*args, **kwargs)
+        logging.info("function %s end", func.__name__)
+        return result
 
-    return wrapper
+    return wrapper
 
 
 def logelapsedtime(func):
-    """logging elapsed time of function execution in milliseconds"""
+    """logging elapsed time of function execution in milliseconds"""
 
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start = time.time() * 1000
-        result = func(*args, **kwargs)
-        elapsed = time.time() * 1000 - start
-        logging.info("function: %s, elapsed time: %f ms", func.__name__, elapsed)
-        return result
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        start = time.time() * 1000
+        result = func(*args, **kwargs)
+        elapsed = time.time() * 1000 - start
+        logging.info("function: %s, elapsed time: %f ms", func.__name__, elapsed)
+        return result
 
-    return wrapper
+    return wrapper
 
 
 def counter(n):
-    """A general purpose counter, infinite loop in case n<=0"""
-    n = n - 1
-    while n != 0:
-        yield n
-        n = n - 1 if n > 0 else n
-    yield n
+    """A general purpose counter, infinite loop in case n<=0"""
+    n = n - 1
+    while n != 0:
+        yield n
+        n = n - 1 if n > 0 else n
+    yield n
 
 
 def waituntil(interval=60, times=10):
-    def decorator(func):
-        """wait for func to be executed and returned as TRUE"""
+    def decorator(func):
+        """wait for func to be executed and returned as TRUE"""
 
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            for c in counter(times):
-                if func(*args, **kwargs):
-                    return true
-                time.sleep(interval)
-            return false
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for c in counter(times):
+                if func(*args, **kwargs):
+                    return true
+                time.sleep(interval)
+            return false
 
-        return wrapper
+        return wrapper
 
-    return decorator
+    return decorator
 
 
 def deprecated(func):
-    """A soft-implementation to https://pypi.org/project/Python-Deprecated/"""
+    """A soft-implementation to https://pypi.org/project/Python-Deprecated/"""
 
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        return func(*args, **kwargs)
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        return func(*args, **kwargs)
 
-    return wrapper
+    return wrapper

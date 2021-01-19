@@ -1,3 +1,3 @@
-# whitehoof
+# snowpaw
 
-A useful python library.
+A useful python package.

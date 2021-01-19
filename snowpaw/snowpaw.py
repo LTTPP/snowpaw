@@ -6,7 +6,7 @@
 # Contact: tungliu@126.com
 # Link: https://liujianwei.tech/
 
-"""mandarin.py"""
+"""snowpaw.py"""
 
 import logging
 import time

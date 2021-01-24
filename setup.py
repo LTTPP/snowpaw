@@ -11,7 +11,7 @@ setuptools.setup(
     description="A useful python package",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/LTTPP/snowpaw",
+    url="https://lttpp.github.io/snowpaw/",
     packages=setuptools.find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",

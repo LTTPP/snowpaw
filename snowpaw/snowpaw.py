@@ -65,7 +65,7 @@ def counter(n):
     yield n
 
 
-def waituntil(interval=60, times=10):
+def waits(interval=60, times=10):
     def decorator(func):
         """wait for func to be executed and returned as TRUE"""
 
@@ -90,3 +90,6 @@ def deprecated(func):
         return func(*args, **kwargs)
 
     return wrapper
+
+if __name__ == '__main__':
+    print('snowpaw is OK')

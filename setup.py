@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="snowpaw",
-    version="0.0.1",
+    version="0.0.2",
     author="Liu Jianwei",
     author_email="tungliu@126.com",
     description="A useful python package",
